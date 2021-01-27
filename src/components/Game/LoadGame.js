@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import GameGrid from "./GameGrid";
-import { getRandomIntInclusive } from "../../HelperFunctions/mathFunctions.js";
+import { getRandomIntInclusive } from "../../utils/mathFunctions.js";
 
 export default class LoadGame extends Component {
   constructor(props) {
@@ -21,6 +21,7 @@ export default class LoadGame extends Component {
       ...this.state.tile,
     };
     let gameGrid = [...this.state.gameGrid];
+    console.log(this.state.initialPositions);
   }
 
   render() {
