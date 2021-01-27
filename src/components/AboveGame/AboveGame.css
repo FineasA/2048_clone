@@ -1,0 +1,28 @@
+.above-game {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 7em;
+  width: 500px;
+}
+
+.game-intro {
+  line-height: 1.2;
+  margin-bottom: 0;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.restart-button {
+  background-color: #8f7a66;
+  border-radius: 3px;
+  padding: 0 20px;
+  text-decoration: none;
+  color: #f9f6f2;
+  height: 40px;
+  line-height: 42px;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  flex-shrink: 0;
+}
