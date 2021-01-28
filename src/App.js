@@ -1,7 +1,7 @@
 import "./App.css";
 import Heading from "./components/Heading/Heading";
 import AboveGame from "./components/AboveGame/AboveGame";
-import LoadGame from "./components/Game/LoadGame";
+import Game from "./components/Game/Game.js";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <div className="container">
         <Heading />
         <AboveGame />
-        <LoadGame />
+        <Game />
       </div>
     </div>
   );
