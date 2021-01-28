@@ -14,23 +14,31 @@ export default class LoadGame extends Component {
       },
       initialPositions: getRandomIntInclusive(),
     };
+
+    let tile1 = {
+      ...this.state.tile,
+    };
+    let tile2 = {
+      ...this.state.tile,
+    };
+
+    tile1.position = this.state.initialPositions.tile1pos;
+    tile2.position = this.state.initialPositions.tile2pos;
+
+    this.state.gameGrid[tile1.position] = tile1;
+    this.state.gameGrid[tile2.position] = tile2;
+
+    console.log(this.state.gameGrid);
   }
 
   componentDidMount() {
-    let tile = {
-      ...this.state.tile,
-    };
-    let gameGrid = [...this.state.gameGrid];
-    console.log(this.state.initialPositions);
+    console.log(this.state.gameGrid.length);
   }
 
   render() {
     return (
       <div>
-        <GameGrid
-          gameGrid={this.state.gameGrid}
-          initialPositions={this.state.initialPositions}
-        />
+        <GameGrid gameGrid={this.state.gameGrid} />
       </div>
     );
   }
