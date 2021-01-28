@@ -2,17 +2,16 @@ import "./GameGrid.css";
 import React from "react";
 
 export default function GameGrid(props) {
-  let tiles = props.gameGrid.map((tile, index) => (
-    <div className="grid-cell" key={index}>
-      {tile !== null ? (
-        <div className="tile-container">
-          <div className="tile tile-2">{tile.value}</div>
+  let tiles = props.gameGrid.map((column, index) => (
+    <div key={index}>
+      {column.map((row, index) => (
+        <div className="grid-cell" key={index}>
+          {row != null ? "X" : null}
         </div>
-      ) : (
-        ""
-      )}
+      ))}
     </div>
   ));
+
   return (
     <div className="game-container">
       <div className="grid-container">

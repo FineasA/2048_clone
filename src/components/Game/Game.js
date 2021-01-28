@@ -27,8 +27,6 @@ export default class Game extends Component {
     let tile2 = {
       ...this.state.tile,
     };
-
-    console.log(this.state.initialPositions);
     //setup intitial tile positions
     tile1.position = this.state.initialPositions.tile1pos;
     tile2.position = this.state.initialPositions.tile2pos;
@@ -36,6 +34,8 @@ export default class Game extends Component {
     //add initial tiles to game grid for rendering...
     this.state.gameGrid[tile1.position.y][tile1.position.x] = tile1;
     this.state.gameGrid[tile2.position.y][tile2.position.x] = tile2;
+
+    console.log(this.state.gameGrid);
   }
 
   componentDidMount() {
