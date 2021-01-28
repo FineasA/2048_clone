@@ -4,6 +4,7 @@ import {
   getInitialTilePositions,
   createGameGridArray,
 } from "../../utils/mathFunctions.js";
+import { swipeUp } from "../../utils/movement.js";
 
 export default class Game extends Component {
   constructor(props) {
@@ -35,7 +36,8 @@ export default class Game extends Component {
     this.state.gameGrid[tile1.position.y][tile1.position.x] = tile1;
     this.state.gameGrid[tile2.position.y][tile2.position.x] = tile2;
 
-    console.log(this.state.gameGrid);
+    //initial game grid state
+    console.log("initial: ", this.state.gameGrid);
   }
 
   componentDidMount() {
@@ -46,10 +48,11 @@ export default class Game extends Component {
   handleKeyDown = (event) => {
     //handle keydown event for each event
     //create function swipeLeft, swipeRight, swipeUp, swipeDown
+    let gameGrid = [...this.state.gameGrid];
     switch (event.key) {
       case "w":
         //run swipeUp function
-        console.log("swipe up");
+        this.setState({ gameGrid: swipeUp(gameGrid) });
         break;
       case "a":
         //run swipeLeft fxn

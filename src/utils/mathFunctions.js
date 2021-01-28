@@ -14,7 +14,7 @@ export function getInitialTilePositions() {
 
   //get coords of tile 2
   tile2pos.x = getRandomIntInclusive(1, 3);
-  tile2pos.x = getRandomIntInclusive(1, 3);
+  tile2pos.y = getRandomIntInclusive(1, 3);
 
   let tilesPositions = {
     tile1pos: tile1pos,
@@ -32,7 +32,6 @@ export function createGameGridArray() {
       gameGrid.push(Array(4).fill(null));
     }
   }
-
   return gameGrid;
 }
 

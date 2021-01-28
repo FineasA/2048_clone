@@ -6,7 +6,11 @@ export default function GameGrid(props) {
     <div key={index}>
       {column.map((row, index) => (
         <div className="grid-cell" key={index}>
-          {row != null ? "X" : null}
+          {row != null ? (
+            <div className="tile-container">
+              <div className="tile tile-2">{row.value}</div>
+            </div>
+          ) : null}
         </div>
       ))}
     </div>
