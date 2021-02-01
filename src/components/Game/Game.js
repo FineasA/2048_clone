@@ -4,7 +4,12 @@ import {
   getInitialTilePositions,
   createGameGridArray,
 } from "../../utils/mathFunctions.js";
-import { swipeUp } from "../../utils/movement.js";
+import {
+  swipeLeft,
+  swipeUp,
+  swipeDown,
+  swipeRight,
+} from "../../utils/movement.js";
 
 export default class Game extends Component {
   constructor(props) {
@@ -56,15 +61,15 @@ export default class Game extends Component {
         break;
       case "a":
         //run swipeLeft fxn
-        console.log("swipe left");
+        this.setState({ gameGrid: swipeLeft(gameGrid) });
         break;
       case "s":
         //run swipeDown fxn
-        console.log("swipe down");
+        this.setState({ gameGrid: swipeDown(gameGrid) });
         break;
       case "d":
         //run swipeRight fxn
-        console.log("swipe right");
+        this.setState({ gameGrid: swipeRight(gameGrid) });
         break;
     }
   };
