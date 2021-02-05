@@ -1,9 +1,9 @@
 import "./GameGrid.css";
 import React from "react";
 
-export default function GameGrid(props) {
-  console.log("Props: ", props);
-  let tiles = props.gameGrid.map((column, index) => (
+export default function GameGrid({ gameGrid }) {
+  console.log("Props: ", gameGrid);
+  let tiles = gameGrid.map((column, index) => (
     <div key={index}>
       {column.map((row, index) => (
         <div className="grid-cell" key={index}>

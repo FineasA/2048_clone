@@ -62,9 +62,7 @@ export default class Game extends Component {
     switch (event.key) {
       case "w":
         //run swipeUp function
-        this.setState({ gameGrid: swipeUp(gameGrid) }, () => {
-          console.log("callback: ".gameGrid);
-        });
+        this.setState({ gameGrid: swipeUp(gameGrid) });
         break;
       case "a":
         //run swipeLeft fxn
