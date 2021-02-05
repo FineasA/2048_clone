@@ -3,6 +3,7 @@ import GameGrid from "./GameGrid";
 import {
   getInitialTilePositions,
   createGameGridArray,
+  randomNewTileValue,
 } from "../../utils/mathFunctions.js";
 import {
   swipeLeft,
@@ -23,6 +24,7 @@ export default class Game extends Component {
           x: 0,
           y: 0,
         },
+        tileIsFilled: true,
       },
       initialPositions: getInitialTilePositions(),
     };
@@ -30,9 +32,12 @@ export default class Game extends Component {
     let tile1 = {
       ...this.state.tile,
     };
+    //setup of tile 2 has random chance to have value 2 | 4
     let tile2 = {
       ...this.state.tile,
     };
+    tile2.value = randomNewTileValue();
+
     //setup intitial tile positions
     tile1.position = this.state.initialPositions.tile1pos;
     tile2.position = this.state.initialPositions.tile2pos;
@@ -57,7 +62,9 @@ export default class Game extends Component {
     switch (event.key) {
       case "w":
         //run swipeUp function
-        this.setState({ gameGrid: swipeUp(gameGrid) });
+        this.setState({ gameGrid: swipeUp(gameGrid) }, () => {
+          console.log("callback: ".gameGrid);
+        });
         break;
       case "a":
         //run swipeLeft fxn

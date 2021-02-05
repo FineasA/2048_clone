@@ -2,11 +2,12 @@ import "./GameGrid.css";
 import React from "react";
 
 export default function GameGrid(props) {
+  console.log("Props: ", props);
   let tiles = props.gameGrid.map((column, index) => (
     <div key={index}>
       {column.map((row, index) => (
         <div className="grid-cell" key={index}>
-          {row != null ? (
+          {row !== 0 ? (
             <div className="tile-container">
               <div className="tile tile-2">{row.value}</div>
             </div>

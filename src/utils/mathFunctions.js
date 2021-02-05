@@ -9,12 +9,14 @@ export function getInitialTilePositions() {
   };
 
   //get coords of tile 1
-  tile1pos.x = getRandomIntInclusive(1, 3);
-  tile1pos.y = getRandomIntInclusive(1, 3);
+  tile1pos.x = getRandomIntInclusive(0, 3);
+  tile1pos.y = getRandomIntInclusive(0, 1);
 
   //get coords of tile 2
-  tile2pos.x = getRandomIntInclusive(1, 3);
-  tile2pos.y = getRandomIntInclusive(1, 3);
+  tile2pos.x = getRandomIntInclusive(0, 3);
+  tile2pos.y = getRandomIntInclusive(2, 3);
+
+  //the reason behind the tile positions of y having different restrictions is so that tiles never overlap on initilization
 
   let tilesPositions = {
     tile1pos: tile1pos,
@@ -29,10 +31,14 @@ export function createGameGridArray() {
 
   for (let i = 0; i < 1; i++) {
     for (let j = 0; j < 4; j++) {
-      gameGrid.push(Array(4).fill(null));
+      gameGrid.push(Array(4).fill(0));
     }
   }
   return gameGrid;
+}
+
+export function randomNewTileValue() {
+  return Math.random() > 0.5 ? 2 : 4;
 }
 
 function getRandomIntInclusive(min, max) {
